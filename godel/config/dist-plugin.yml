@@ -1,0 +1,9 @@
+products:
+  hrm:
+    build:
+      main-pkg: ./cmd/hrm
+      os-archs:
+      - os: darwin
+        arch: amd64
+      - os: linux
+        arch: amd64

@@ -52,7 +52,9 @@ func profileFilePath() (string, error) {
 
 	switch runtime.GOOS {
 	case "windows":
-		profilePaths = []string{`%APPDATA%\Human Resource Machine\profiles.bin`}
+		profilePaths = []string{
+			os.ExpandEnv(`$APPDATA/Human Resource Machine/profiles.bin`),
+		}
 	case "darwin":
 		profilePaths = []string{
 			`~/Library/Application Support/Human Resource Machine/profiles.bin`,
